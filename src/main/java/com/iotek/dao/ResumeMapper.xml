@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.iotek.dao.ResumeMapper">
+
+    <insert id="addResume" parameterType="Resume">
+        INSERT INTO RESUME(RES_ID,RES_TITLE,RES_NAME,RES_SEX,RES_OLD,RES_EDUCATION,RES_SUFFER,RES_PHONE,RES_IDNUMBER,U_ID,RES_STATE,RES_READ_STATE)
+        VALUES (RESUME_SEQ.nextval,#{RES_TITLE},#{RES_NAME},#{RES_SEX},#{RES_OLD},#{RES_EDUCATION},#{RES_SUFFER},
+        #{RES_PHONE},#{RES_IDNUMBER},#{U_ID},#{RES_STATE},#{RES_READ_STATE})
+    </insert>
+
+    <update id="updateState" parameterType="Resume">
+        UPDATE RESUME SET RES_STATE=#{RES_STATE} where RES_TITLE=#{RES_TITLE}
+    </update>
+
+    <delete id="delectResume" parameterType="Resume">
+        DELETE FROM RESUME WHERE RES_ID=#{RES_ID}
+    </delete>
+
+    <select id="selectUID" resultType="com.iotek.model.Resume">
+        SELECT * FROM RESUME WHERE U_ID=#{U_ID}
+    </select>
+    <select id="selectTitle" resultType="com.iotek.model.Resume">
+        SELECT * FROM RESUME WHERE RES_TITLE=#{RES_TITLE}
+    </select>
+    <select id="selectID" resultType="com.iotek.model.Resume">
+        SELECT * FROM RESUME WHERE RES_ID=#{RES_ID}
+    </select>
+</mapper>

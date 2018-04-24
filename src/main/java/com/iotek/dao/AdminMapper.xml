@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.iotek.dao.AdminMapper">
+    <insert id="insertAdmin" parameterType="Admin">
+        INSERT INTO ADMIN_T(AD_ID,AD_NAME,AD_PASS,AD_STATE) VALUES (ADMIN_SEQ.nextval,#{AD_NAME},#{AD_PASS},#{AD_STATE})
+    </insert>
+    <select id="login" resultType="com.iotek.model.Admin">
+        SELECT * FROM ADMIN_T WHERE AD_NAME=#{AD_NAME} and AD_PASS=#{AD_PASS}
+    </select>
+</mapper>
