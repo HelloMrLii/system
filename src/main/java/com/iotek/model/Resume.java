@@ -6,137 +6,133 @@ import java.io.Serializable;
  * Created by Administrator on 2018/4/23.
  */
 public class Resume implements Serializable{
-    private int RES_ID;
-    private String RES_TITLE;//标题
-    private String RES_NAME;//（姓名）
-    private String RES_SEX;//(性别)
-    private String RES_OLD;//（年龄）
-    private String RES_EDUCATION;//（学历
-    private String RES_SUFFER;//工作经验）
-    private String RES_PHONE;//（电话）
-    private String RES_IDNUMBER;//(身份证号码)
-    private int U_ID;
-    private String RES_STATE;//状态
-    private String RES_READ_STATE;//是否阅读
+    private int res_id;
+    private String res_title;//标题
+    private String res_name;//（姓名）
+    private String res_sex;//(性别)
+    private String res_old;//（年龄）
+    private String res_education;//（学历
+    private String res_suffer;//工作经验）
+    private String res_phone;//（电话）
+    private String res_idnumber;//(身份证号码)
+    private int u_id;
+    private String res_state;//状态
+    private String res_read_state;//是否阅读
 
     public Resume() {
     }
 
-    public String getRES_READ_STATE() {
-        return RES_READ_STATE;
+    public int getRes_id() {
+        return res_id;
     }
 
-    public void setRES_READ_STATE(String RES_READ_STATE) {
-        this.RES_READ_STATE = RES_READ_STATE;
+    public void setRes_id(int res_id) {
+        this.res_id = res_id;
     }
 
-    public int getRES_ID() {
-        return RES_ID;
+    public String getRes_title() {
+        return res_title;
     }
 
-    public void setRES_ID(int RES_ID) {
-        this.RES_ID = RES_ID;
+    public void setRes_title(String res_title) {
+        this.res_title = res_title;
     }
 
-    public Resume(int RES_ID) {
-        this.RES_ID = RES_ID;
+    public String getRes_name() {
+        return res_name;
     }
 
-    public String getRES_TITLE() {
-        return RES_TITLE;
+    public void setRes_name(String res_name) {
+        this.res_name = res_name;
     }
 
-    public void setRES_TITLE(String RES_TITLE) {
-        this.RES_TITLE = RES_TITLE;
+    public String getRes_sex() {
+        return res_sex;
     }
 
-    public String getRES_NAME() {
-        return RES_NAME;
+    public void setRes_sex(String res_sex) {
+        this.res_sex = res_sex;
     }
 
-    public void setRES_NAME(String RES_NAME) {
-        this.RES_NAME = RES_NAME;
+    public String getRes_old() {
+        return res_old;
     }
 
-    public String getRES_SEX() {
-        return RES_SEX;
+    public void setRes_old(String res_old) {
+        this.res_old = res_old;
     }
 
-    public void setRES_SEX(String RES_SEX) {
-        this.RES_SEX = RES_SEX;
+    public String getRes_education() {
+        return res_education;
     }
 
-    public String getRES_OLD() {
-        return RES_OLD;
+    public void setRes_education(String res_education) {
+        this.res_education = res_education;
     }
 
-    public void setRES_OLD(String RES_OLD) {
-        this.RES_OLD = RES_OLD;
+    public String getRes_suffer() {
+        return res_suffer;
     }
 
-    public String getRES_EDUCATION() {
-        return RES_EDUCATION;
+    public void setRes_suffer(String res_suffer) {
+        this.res_suffer = res_suffer;
     }
 
-    public void setRES_EDUCATION(String RES_EDUCATION) {
-        this.RES_EDUCATION = RES_EDUCATION;
+    public String getRes_phone() {
+        return res_phone;
     }
 
-    public String getRES_SUFFER() {
-        return RES_SUFFER;
+    public void setRes_phone(String res_phone) {
+        this.res_phone = res_phone;
     }
 
-    public void setRES_SUFFER(String RES_SUFFER) {
-        this.RES_SUFFER = RES_SUFFER;
+    public String getRes_idnumber() {
+        return res_idnumber;
     }
 
-    public String getRES_PHONE() {
-        return RES_PHONE;
+    public void setRes_idnumber(String res_idnumber) {
+        this.res_idnumber = res_idnumber;
     }
 
-    public void setRES_PHONE(String RES_PHONE) {
-        this.RES_PHONE = RES_PHONE;
+    public int getU_id() {
+        return u_id;
     }
 
-    public String getRES_IDNUMBER() {
-        return RES_IDNUMBER;
+    public void setU_id(int u_id) {
+        this.u_id = u_id;
     }
 
-    public void setRES_IDNUMBER(String RES_IDNUMBER) {
-        this.RES_IDNUMBER = RES_IDNUMBER;
+    public String getRes_state() {
+        return res_state;
     }
 
-    public int getU_ID() {
-        return U_ID;
+    public void setRes_state(String res_state) {
+        this.res_state = res_state;
     }
 
-    public void setU_ID(int u_ID) {
-        U_ID = u_ID;
+    public String getRes_read_state() {
+        return res_read_state;
     }
 
-    public String getRES_STATE() {
-        return RES_STATE;
-    }
-
-    public void setRES_STATE(String RES_STATE) {
-        this.RES_STATE = RES_STATE;
+    public void setRes_read_state(String res_read_state) {
+        this.res_read_state = res_read_state;
     }
 
     @Override
     public String toString() {
         return "Resume{" +
-                "RES_ID=" + RES_ID +
-                ", RES_TITLE='" + RES_TITLE + '\'' +
-                ", RES_NAME='" + RES_NAME + '\'' +
-                ", RES_SEX='" + RES_SEX + '\'' +
-                ", RES_OLD='" + RES_OLD + '\'' +
-                ", RES_EDUCATION='" + RES_EDUCATION + '\'' +
-                ", RES_SUFFER='" + RES_SUFFER + '\'' +
-                ", RES_PHONE='" + RES_PHONE + '\'' +
-                ", RES_IDNUMBER='" + RES_IDNUMBER + '\'' +
-                ", U_ID=" + U_ID +
-                ", RES_STATE='" + RES_STATE + '\'' +
-                ", RES_READ_STATE='" + RES_READ_STATE + '\'' +
+                "res_id=" + res_id +
+                ", res_title='" + res_title + '\'' +
+                ", res_name='" + res_name + '\'' +
+                ", res_sex='" + res_sex + '\'' +
+                ", res_old='" + res_old + '\'' +
+                ", res_education='" + res_education + '\'' +
+                ", res_suffer='" + res_suffer + '\'' +
+                ", res_phone='" + res_phone + '\'' +
+                ", res_idnumber='" + res_idnumber + '\'' +
+                ", u_id=" + u_id +
+                ", res_state='" + res_state + '\'' +
+                ", res_read_state='" + res_read_state + '\'' +
                 '}';
     }
 }

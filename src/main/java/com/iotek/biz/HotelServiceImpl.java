@@ -18,4 +18,12 @@ public class HotelServiceImpl implements HotelService {
     public List<Hotel> selectHotel() {
         return hotelMapper.selectHotel();
     }
+
+    public Hotel selectHotpost(Hotel hotel) {
+        return hotelMapper.selectHotpost(hotel);
+    }
+
+    public boolean addHotel(Hotel hotel) {
+        return hotelMapper.addHotel(hotel);
+    }
 }

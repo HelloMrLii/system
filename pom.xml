@@ -52,6 +52,12 @@
     </dependency>
 
     <dependency>
+      <groupId>com.esotericsoftware.reflectasm</groupId>
+      <artifactId>reflectasm</artifactId>
+      <version>1.09</version>
+    </dependency>
+
+    <dependency>
       <groupId>com.oracle</groupId>
       <artifactId>ojdbc6_g</artifactId>
       <version>11.2.0.4.0</version>

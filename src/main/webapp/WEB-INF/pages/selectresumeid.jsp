@@ -14,6 +14,17 @@
 <head>
     <base href="<%=basePath%>"/>
     <title></title>
+    <script>
+        function doValidate() {
+             var reg =  /^[1-9]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/;
+            if (!reg.test(document.forma.time.value)){
+                alert('时间格式不正确,正确格式为: 2014-01-01');
+                document.forma.time.focus();
+                return false;
+            }
+            return true;
+        }
+    </script>
 </head>
 <body>
 <table border="1" cellspacing="0">
@@ -24,25 +35,31 @@
         <td>工作经验</td>
         <td>电话号码</td>
         <td>身份证号码</td>
+        <td>面试时间</td>
         <td>是否安排面试</td>
-        <td>操作</td>
     </tr>
     <%
         Resume resume= (Resume) session.getAttribute("resumes");
     %>
     <tr>
-        <td> <%=resume.getRES_NAME()%></td>
-        <td><%=resume.getRES_OLD()%></td>
-        <td><%=resume.getRES_EDUCATION()%></td>
-        <td><%=resume.getRES_SUFFER()%></td>
-        <td><%=resume.getRES_PHONE()%></td>
-        <td><%=resume.getRES_IDNUMBER()%></td>
+        <td> <%=resume.getRes_name()%></td>
+        <td><%=resume.getRes_old()%></td>
+        <td><%=resume.getRes_education()%></td>
+        <td><%=resume.getRes_suffer()%></td>
+        <td><%=resume.getRes_phone()%></td>
+        <td><%=resume.getRes_idnumber()%></td>
+        <form action="insertinvite" method="post" name="forma" onsubmit="return doValidate()">
+            <td>
+                <input type="text" name="time"/>
+            </td>
         <td>
-            <form action="" method="post">
-
-            </form>
+               <input type="hidden" name="u_id" value="<%=resume.getU_id()%>"/>
+                <input type="hidden" name="resid" value="<%=resume.getRes_id()%>"/>
+            <input value="发送邀请" type="submit"/>
         </td>
+        </form>
     </tr>
 </table>
+<a href="selectrecruit">返回</a>
 </body>
 </html>

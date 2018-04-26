@@ -29,12 +29,13 @@ public class UserController {
      */
     @RequestMapping("/login")
     public String login(HttpSession session,Model model,HttpServletRequest request)throws Exception{
-        String name=request.getParameter("U_NAME");
-        String pass=request.getParameter("U_PASS");
+        String name=request.getParameter("u_name");
+        String pass=request.getParameter("u_pass");
+        System.out.println(name+"22222222"+pass);
         if (pass.equals("admin")){
             Admin admin=new Admin();
-            admin.setAD_NAME(name);
-            admin.setAD_PASS(pass);
+            admin.setAd_name(name);
+            admin.setAd_pass(pass);
             Admin admin1=adminService.login(admin);
             if (admin1!=null){
                 session.setAttribute("user",admin1);
@@ -45,8 +46,8 @@ public class UserController {
             }
         }else {
             Users users=new Users();
-            users.setU_NAME(name);
-            users.setU_PASS(name);
+            users.setU_name(name);
+            users.setU_pass(name);
             Users users1=userService.selectUSers(users);
             if (users1!=null){
                 session.setAttribute("user",users1);
@@ -79,16 +80,16 @@ public class UserController {
         Users users=new Users();
         Admin admin=new Admin();
         if (pass.equals("admin")){
-            admin.setAD_NAME(name);
-            admin.setAD_PASS(pass);
-            admin.setAD_STATE(3);
+            admin.setAd_name(name);
+            admin.setAd_pass(pass);
+            admin.setAd_state(3);
             if (adminService.insertAdmin(admin)){
                 return "../../index";
             }
         }else {
-            users.setU_NAME(name);
-            users.setU_PASS(name);
-            users.setU_STATE(1);
+            users.setU_name(name);
+            users.setU_pass(name);
+            users.setU_state(1);
             if (userService.addUser(users)){
                 return "../../index";
             }

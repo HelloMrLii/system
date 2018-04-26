@@ -6,60 +6,60 @@ import java.io.Serializable;
  * Created by Administrator on 2018/4/24.
  */
 public class Recruit implements Serializable {
-    private int RE_ID;
-    private int RES_ID;
-    private String RE_JOB;
-    private String RE_STATE;
-    private String U_NAME;
+    private int re_id;
+    private int res_id;
+    private String re_job;
+    private String re_state;
+    private String u_name;
 
-    public String getU_NAME() {
-        return U_NAME;
+    public int getRe_id() {
+        return re_id;
     }
 
-    public void setU_NAME(String u_NAME) {
-        U_NAME = u_NAME;
+    public void setRe_id(int re_id) {
+        this.re_id = re_id;
     }
 
-    public int getRE_ID() {
-        return RE_ID;
+    public int getRes_id() {
+        return res_id;
     }
 
-    public void setRE_ID(int RE_ID) {
-        this.RE_ID = RE_ID;
+    public void setRes_id(int res_id) {
+        this.res_id = res_id;
     }
 
-    public int getRES_ID() {
-        return RES_ID;
+    public String getRe_job() {
+        return re_job;
     }
 
-    public void setRES_ID(int RES_ID) {
-        this.RES_ID = RES_ID;
+    public void setRe_job(String re_job) {
+        this.re_job = re_job;
     }
 
-    public String getRE_JOB() {
-        return RE_JOB;
+    public String getRe_state() {
+        return re_state;
     }
 
-    public void setRE_JOB(String RE_JOB) {
-        this.RE_JOB = RE_JOB;
+    public void setRe_state(String re_state) {
+        this.re_state = re_state;
     }
 
-    public String getRE_STATE() {
-        return RE_STATE;
+    public String getU_name() {
+        return u_name;
     }
 
-    public void setRE_STATE(String RE_STATE) {
-        this.RE_STATE = RE_STATE;
+    public void setU_name(String u_name) {
+        this.u_name = u_name;
     }
 
     @Override
     public String toString() {
         return "Recruit{" +
-                "RE_ID=" + RE_ID +
-                ", RES_ID=" + RES_ID +
-                ", RE_JOB='" + RE_JOB + '\'' +
-                ", RE_STATE='" + RE_STATE + '\'' +
-                ", U_NAME='" + U_NAME + '\'' +
+                "re_id=" + re_id +
+                ", res_id=" + res_id +
+                ", re_job='" + re_job + '\'' +
+                ", re_state='" + re_state + '\'' +
+                ", u_name='" + u_name + '\'' +
                 '}';
     }
 }

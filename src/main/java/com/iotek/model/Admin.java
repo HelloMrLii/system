@@ -6,60 +6,53 @@ import java.io.Serializable;
  * Created by Administrator on 2018/4/24.
  */
 public class Admin implements Serializable {
-    private int AD_ID;
-    private String AD_NAME;
-    private String AD_PASS;
-    private int AD_STATE;
+    private int ad_id;
+    private String ad_name;
+    private String ad_pass;
+    private int ad_state;
 
     public Admin() {
     }
 
-    public Admin(int AD_ID, String AD_NAME, String AD_PASS, int AD_STATE) {
-        this.AD_ID = AD_ID;
-        this.AD_NAME = AD_NAME;
-        this.AD_PASS = AD_PASS;
-        this.AD_STATE = AD_STATE;
+    public int getAd_id() {
+        return ad_id;
     }
 
-    public int getAD_ID() {
-        return AD_ID;
+    public void setAd_id(int ad_id) {
+        this.ad_id = ad_id;
     }
 
-    public void setAD_ID(int AD_ID) {
-        this.AD_ID = AD_ID;
+    public String getAd_name() {
+        return ad_name;
     }
 
-    public String getAD_NAME() {
-        return AD_NAME;
+    public void setAd_name(String ad_name) {
+        this.ad_name = ad_name;
     }
 
-    public void setAD_NAME(String AD_NAME) {
-        this.AD_NAME = AD_NAME;
+    public String getAd_pass() {
+        return ad_pass;
     }
 
-    public String getAD_PASS() {
-        return AD_PASS;
+    public void setAd_pass(String ad_pass) {
+        this.ad_pass = ad_pass;
     }
 
-    public void setAD_PASS(String AD_PASS) {
-        this.AD_PASS = AD_PASS;
+    public int getAd_state() {
+        return ad_state;
     }
 
-    public int getAD_STATE() {
-        return AD_STATE;
-    }
-
-    public void setAD_STATE(int AD_STATE) {
-        this.AD_STATE = AD_STATE;
+    public void setAd_state(int ad_state) {
+        this.ad_state = ad_state;
     }
 
     @Override
     public String toString() {
         return "Admin{" +
-                "AD_ID=" + AD_ID +
-                ", AD_NAME='" + AD_NAME + '\'' +
-                ", AD_PASS='" + AD_PASS + '\'' +
-                ", AD_STATE=" + AD_STATE +
+                "ad_id=" + ad_id +
+                ", ad_name='" + ad_name + '\'' +
+                ", ad_pass='" + ad_pass + '\'' +
+                ", ad_state=" + ad_state +
                 '}';
     }
 }

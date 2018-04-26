@@ -1,5 +1,6 @@
 package com.iotek.dao;
 
+import com.iotek.model.Recruit;
 import com.iotek.model.Resume;
 import com.iotek.model.Users;
 
@@ -15,4 +16,5 @@ public interface ResumeMapper {
     boolean updateState(Resume resume);
     Resume selectTitle(Resume resume);
     Resume selectID(Resume resume);
+    boolean updateReadstate(Resume resume);
 }

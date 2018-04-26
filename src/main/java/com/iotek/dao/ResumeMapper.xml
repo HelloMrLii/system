@@ -4,25 +4,28 @@
 
     <insert id="addResume" parameterType="Resume">
         INSERT INTO RESUME(RES_ID,RES_TITLE,RES_NAME,RES_SEX,RES_OLD,RES_EDUCATION,RES_SUFFER,RES_PHONE,RES_IDNUMBER,U_ID,RES_STATE,RES_READ_STATE)
-        VALUES (RESUME_SEQ.nextval,#{RES_TITLE},#{RES_NAME},#{RES_SEX},#{RES_OLD},#{RES_EDUCATION},#{RES_SUFFER},
-        #{RES_PHONE},#{RES_IDNUMBER},#{U_ID},#{RES_STATE},#{RES_READ_STATE})
+        VALUES (RESUME_SEQ.nextval,#{res_title},#{res_name},#{res_sex},#{res_old},#{res_education},#{res_suffer},
+        #{res_phone},#{res_idnumber},#{u_id},#{res_state},#{res_read_state})
     </insert>
 
     <update id="updateState" parameterType="Resume">
-        UPDATE RESUME SET RES_STATE=#{RES_STATE} where RES_TITLE=#{RES_TITLE}
+        UPDATE RESUME SET RES_STATE=#{res_state} where RES_TITLE=#{res_title}
+    </update>
+    <update id="updateReadstate" parameterType="Resume">
+        UPDATE RESUME SET RES_READ_STATE=#{res_read_state},RES_STATE=#{res_state} where RES_ID=#{res_id}
     </update>
 
     <delete id="delectResume" parameterType="Resume">
-        DELETE FROM RESUME WHERE RES_ID=#{RES_ID}
+        DELETE FROM RESUME WHERE RES_ID=#{res_id}
     </delete>
 
     <select id="selectUID" resultType="com.iotek.model.Resume">
-        SELECT * FROM RESUME WHERE U_ID=#{U_ID}
+        SELECT * FROM RESUME WHERE U_ID=#{u_id}
     </select>
     <select id="selectTitle" resultType="com.iotek.model.Resume">
-        SELECT * FROM RESUME WHERE RES_TITLE=#{RES_TITLE}
+        SELECT * FROM RESUME WHERE RES_TITLE=#{res_title}
     </select>
     <select id="selectID" resultType="com.iotek.model.Resume">
-        SELECT * FROM RESUME WHERE RES_ID=#{RES_ID}
+        SELECT * FROM RESUME WHERE RES_ID=#{res_id}
     </select>
 </mapper>

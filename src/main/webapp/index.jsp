@@ -12,8 +12,8 @@
 <fieldset>
     <legend>登录界面</legend>
     <form action="login" method="post">
-        账号：<input name="U_NAME"><br>
-        密码：<input name="U_PASS"><br>
+        账号：<input name="u_name"><br>
+        密码：<input name="u_pass"><br>
         <input type="submit" value="登录">
     </form>
     <h4 style="color: red">${error}</h4>

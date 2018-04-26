@@ -6,53 +6,53 @@ import java.io.Serializable;
  * Created by Administrator on 2018/4/23.
  */
 public class Users implements Serializable {
-    private int U_ID;
-    private String U_NAME;
-    private String U_PASS;
-    private int U_STATE;
+    private int u_id;
+    private String u_name;
+    private String u_pass;
+    private int u_state;
 
     public Users() {
     }
 
-    public int getU_STATE() {
-        return U_STATE;
+    public int getU_id() {
+        return u_id;
     }
 
-    public void setU_STATE(int u_STATE) {
-        U_STATE = u_STATE;
+    public void setU_id(int u_id) {
+        this.u_id = u_id;
     }
 
-    public int getU_ID() {
-        return U_ID;
+    public String getU_name() {
+        return u_name;
     }
 
-    public void setU_ID(int u_ID) {
-        U_ID = u_ID;
+    public void setU_name(String u_name) {
+        this.u_name = u_name;
     }
 
-    public String getU_NAME() {
-        return U_NAME;
+    public String getU_pass() {
+        return u_pass;
     }
 
-    public void setU_NAME(String u_NAME) {
-        U_NAME = u_NAME;
+    public void setU_pass(String u_pass) {
+        this.u_pass = u_pass;
     }
 
-    public String getU_PASS() {
-        return U_PASS;
+    public int getU_state() {
+        return u_state;
     }
 
-    public void setU_PASS(String u_PASS) {
-        U_PASS = u_PASS;
+    public void setU_state(int u_state) {
+        this.u_state = u_state;
     }
 
     @Override
     public String toString() {
         return "Users{" +
-                "U_ID=" + U_ID +
-                ", U_NAME='" + U_NAME + '\'' +
-                ", U_PASS='" + U_PASS + '\'' +
-                ", U_STATE=" + U_STATE +
+                "u_id=" + u_id +
+                ", u_name='" + u_name + '\'' +
+                ", u_pass='" + u_pass + '\'' +
+                ", u_state=" + u_state +
                 '}';
     }
 }

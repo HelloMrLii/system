@@ -17,10 +17,10 @@
     <title></title>
     <script>
         function doValidate() {
-            var state='未阅读';
-            if (!state.test(document.forma.resid.value)){
+            var state="未阅读";
+            if (!state.test(document.forma.res_read_state.value)){
                 alert('此简历尚未批阅，无法删除');
-                document.forma.resid.focus();
+                document.forma.res_read_state.focus();
                 return false;
             }
             return true;
@@ -42,24 +42,25 @@
     </tr>
     <c:forEach items="${sessionScope.resume}" var="resume">
         <tr>
-            <td>${resume.RES_TITLE}</td>
-            <td>${resume.RES_NAME}</td>
-            <td>${resume.RES_SEX}</td>
-            <td>${resume.RES_OLD}</td>
-            <td>${resume.RES_EDUCATION}</td>
-            <td>${resume.RES_SUFFER}</td>
-            <td>${resume.RES_PHONE}</td>
-            <td>${resume.RES_IDNUMBER}</td>
-            <td>${resume.RES_STATE}</td>
+            <td>${resume.res_title}</td>
+            <td>${resume.res_name}</td>
+            <td>${resume.res_sex}</td>
+            <td>${resume.res_old}</td>
+            <td>${resume.res_education}</td>
+            <td>${resume.res_suffer}</td>
+            <td>${resume.res_phone}</td>
+            <td>${resume.res_idnumber}</td>
+            <td>${resume.res_state}</td>
             <td>
                 <form method="post" action="delectresume" name="forma" onsubmit="return doValidate()">
-                    <input value="${resume.RES_ID}" type="hidden" name="RES_ID"/>
-                    <input name="resid" value="${resume.RES_READ_STATE}" type="hidden"/>
+                    <input value="${resume.res_id}" type="hidden" name="res_id"/>
+                    <input name="res_read_state" value="${resume.res_read_state}" type="hidden"/>
                     <input type="submit" value="删除">
                 </form>
             </td>
         </tr>
     </c:forEach>
 </table>
+<a href="skip">返回</a>
 </body>
 </html>

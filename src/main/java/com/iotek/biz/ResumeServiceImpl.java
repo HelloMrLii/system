@@ -1,6 +1,7 @@
 package com.iotek.biz;
 
 import com.iotek.dao.ResumeMapper;
+import com.iotek.model.Recruit;
 import com.iotek.model.Resume;
 import org.springframework.stereotype.Service;
 
@@ -37,5 +38,9 @@ public class ResumeServiceImpl implements ResumeService {
 
     public Resume selectID(Resume resume) {
         return resumeMapper.selectID(resume);
+    }
+
+    public boolean updateReadstate(Resume resume) {
+        return resumeMapper.updateReadstate(resume);
     }
 }

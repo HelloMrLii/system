@@ -19,5 +19,6 @@
 <a href="selecthotel">浏览招聘信息</a>
 <a href="addresume">创建简历</a>
 <a href="selectresume">浏览简历</a>
+<a href="selectinvited">查看邮箱</a>
 </body>
 </html>

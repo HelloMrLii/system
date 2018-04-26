@@ -3,8 +3,16 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.iotek.dao.HotelMapper">
+    <insert id="addHotel" parameterType="Hotel">
+        INSERT INTO HOTEL_JOB(HOT_ID, HOT_TITLE, HOT_MONEY, HOT_REL_TIME, HOT_POST, HOT_REQUIRE, HOT_SITE, HOT_WELFARE, HOT_INTRO, HOT_WORK_TIME) VALUES
+         (HOT_SEQ.nextval,#{hot_title},#{hot_money},#{hot_rel_time},#{hot_post},#{hot_require},#{hot_site},
+         #{hot_welfare},#{hot_intro},#{hot_work_time})
+    </insert>
 
     <select id="selectHotel" resultType="com.iotek.model.Hotel">
         SELECT * FROM HOTEL_JOB
+    </select>
+    <select id="selectHotpost" resultType="com.iotek.model.Hotel">
+        SELECT * FROM HOTEL_JOB WHERE HOT_POST=#{hot_post}
     </select>
 </mapper>

@@ -28,9 +28,9 @@ public class ResumeController {
     @RequestMapping("/insertresume")
     public String inster(Resume resume,HttpSession session)throws Exception{
         Users users= (Users) session.getAttribute("user");
-        resume.setU_ID(users.getU_ID());
-        resume.setRES_STATE("未投递");
-        resume.setRES_READ_STATE("未阅读");
+        resume.setU_id(users.getU_id());
+        resume.setRes_state("未投递");
+        resume.setRes_read_state("未阅读");
         if (resumeService.addResume(resume)){
             return "userhome";
         }else {
@@ -51,8 +51,8 @@ public class ResumeController {
         Users users= (Users) session.getAttribute("user");
         System.out.println(users);
         Resume resume=new Resume();
-        resume.setU_ID(users.getU_ID());
-        System.out.println("简历表中的用户ID"+resume.getU_ID());
+        resume.setU_id(users.getU_id());
+        System.out.println("简历表中的用户ID"+resume.getU_id());
         List<Resume> resumes=resumeService.selectUID(resume);
         if (resumes.size()==0){
             return "insertresume";
@@ -81,7 +81,7 @@ public class ResumeController {
      */
     @RequestMapping("/delectresume")
     public String delectresume(Resume resume,HttpSession session)throws Exception{
-        if (resume.getRES_READ_STATE().equals("未阅读")){
+        if (resume.getRes_read_state().equals("未阅读")){
             return select(session);
         }
         if (resumeService.delectResume(resume)){
@@ -101,6 +101,9 @@ public class ResumeController {
     @RequestMapping("/selectresumeid")
     public String selectResumeid(Resume resume,HttpSession session)throws Exception{
         Resume resume1=resumeService.selectID(resume);
+        resume.setRes_read_state("已阅读");
+        resume.setRes_state("已投递");
+        resumeService.updateReadstate(resume);
         if (resume1!=null){
             session.setAttribute("resumes",resume1);
             return "selectresumeid";

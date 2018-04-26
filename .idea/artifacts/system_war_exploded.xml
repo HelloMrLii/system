@@ -12,6 +12,8 @@
           <element id="library" level="project" name="Maven: javax.servlet:jstl:1.2" />
           <element id="library" level="project" name="Maven: taglibs:standard:1.0" />
           <element id="library" level="project" name="Maven: javax.transaction:jta:1.1" />
+          <element id="library" level="project" name="Maven: com.esotericsoftware.reflectasm:reflectasm:1.09" />
+          <element id="library" level="project" name="Maven: org.ow2.asm:asm:4.0" />
           <element id="library" level="project" name="Maven: com.oracle:ojdbc6_g:11.2.0.4.0" />
           <element id="library" level="project" name="Maven: mysql:mysql-connector-java:5.1.40" />
           <element id="library" level="project" name="Maven: org.mybatis:mybatis:3.2.7" />

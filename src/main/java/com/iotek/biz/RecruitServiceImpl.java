@@ -21,4 +21,12 @@ public class RecruitServiceImpl implements RecruitService {
     public List<Recruit> selectRecruit() {
         return recruitMapper.selectRecruit();
     }
+
+    public boolean delectRecruit(Recruit recruit) {
+        return recruitMapper.delectRecruit(recruit);
+    }
+
+    public Recruit selectResid(Recruit recruit) {
+        return recruitMapper.selectResid(recruit);
+    }
 }

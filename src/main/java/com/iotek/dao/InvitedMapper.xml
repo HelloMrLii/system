@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.iotek.dao.InvitedMapper">
+    <insert id="insertInvited" parameterType="Invited">
+        INSERT INTO INVITED(INV_ID, INV_TIME, INV_SITE, U_ID, INV_STATE, INV_PASS) VALUES (INVITEHOT_WORK_TIMED_SEQ.nextval,
+        #{inv_time},#{inv_site},#{u_id},#{inv_state},#{inv_pass})
+    </insert>
+    <update id="updateState" parameterType="Invited">
+        UPDATE INVITED SET INV_STATE=#{inv_state} , inv_pass=#{inv_pass} where inv_id=#{inv_id}
+    </update>
+    <select id="selectInvited" resultType="com.iotek.model.Invited">
+        SELECT * FROM INVITED WHERE U_ID=#{u_id}
+    </select>
+    <select id="selectInviteda" resultType="com.iotek.model.Invited">
+        SELECT * FROM INVITED
+    </select>
+</mapper>

@@ -9,4 +9,6 @@ import java.util.List;
  */
 public interface HotelService {
     List<Hotel> selectHotel();
+    Hotel selectHotpost(Hotel hotel);
+    boolean addHotel(Hotel hotel);
 }

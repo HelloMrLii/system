@@ -24,23 +24,31 @@
             <td>发布时间</td>
             <td>职位</td>
             <td>要求</td>
+            <td>公司地址</td>
+            <td>福利</td>
+            <td>公司简介</td>
+            <td>上班时间</td>
             <td>投递简历</td>
         </tr>
         <c:forEach items="${sessionScope.hotel}" var="hotel">
             <tr>
-                <td>${hotel.HOT_TITLE}</td>
-                <td>${hotel.HOT_MONEY}</td>
-                <td>${hotel.HOT_REL_TIME}</td>
-                <td>${hotel.HOT_POST}</td>
-                <td>${hotel.HOT_REQUIRE}</td>
+                <td>${hotel.hot_title}</td>
+                <td>${hotel.hot_money}</td>
+                <td>${hotel.hot_rel_time}</td>
+                <td>${hotel.hot_post}</td>
+                <td>${hotel.hot_require}</td>
+                <td>${hotel.hot_site}</td>
+                <td>${hotel.hot_welfare}</td>
+                <td>${hotel.hot_intro}</td>
+                <td>${hotel.hot_work_time}</td>
                 <td>
                     <form method="post" action="addrecruit">
-                            <select name="RES_TITLE">
+                            <select name="res_title">
                                 <c:forEach items="${sessionScope.resume}" var="resume">
-                                <option>${resume.RES_TITLE}</option>
+                                <option>${resume.res_title}</option>
                                 </c:forEach>
                             </select>
-                            <input type="hidden" name="RE_JOB" value="${hotel.HOT_POST}"/>
+                            <input type="hidden" name="re_job" value="${hotel.hot_post}"/>
                             <input type="submit" value="投递"/>
                     </form>
                 </td>

@@ -10,4 +10,6 @@ import java.util.List;
 public interface RecruitService {
     boolean addRecruit(Recruit recruit);
     List<Recruit> selectRecruit();
+    boolean delectRecruit(Recruit recruit);
+    Recruit selectResid(Recruit recruit);
 }

@@ -33,16 +33,17 @@ public class RecruitController {
      */
     @RequestMapping("/addrecruit")
     public String addrecruit(Recruit recruit, HttpServletRequest request, HttpSession session)throws Exception{
-        recruit.setRE_STATE("未阅读");//招聘表的状态
+        recruit.setRe_state("未阅读");//招聘表的状态
         Resume resume=new Resume();//简历表对象
-        resume.setRES_TITLE(request.getParameter("RES_TITLE"));
-        resume.setRES_STATE("已投递");
+        resume.setRes_title(request.getParameter("res_title"));//获取简历表的标题
+        System.out.println(resume.getRes_title());
+        resume.setRes_state("已投递");//改变投递状态
         System.out.println("");
         resumeService.updateState(resume);//改变简历表中的投递状态
         Resume resume1=resumeService.selectTitle(resume);
         System.out.println(resume1);
-        recruit.setRES_ID(resume1.getRES_ID());
-        recruit.setU_NAME(resume1.getRES_NAME());
+        recruit.setRes_id(resume1.getRes_id());
+        recruit.setU_name(resume1.getRes_name());
         if (recruitService.addRecruit(recruit)){
            return hotelController.selecthotel(session);
         }else {
@@ -64,6 +65,27 @@ public class RecruitController {
             return "selectrecruit";
         }else {
             return "adminhome";
+        }
+    }
+
+    /**
+     * 管理员删除求职信息
+     * @param recruit
+     * @param session
+     * @return
+     * @throws Exception
+     */
+    @RequestMapping("/delectrecruit")
+    public String delectrecruit(Recruit recruit,HttpSession session)throws Exception{
+        if (recruitService.delectRecruit(recruit)){
+            Resume resume=new Resume();
+            resume.setRes_id(recruit.getRes_id());
+            resume.setRes_read_state("已阅读");
+            resume.setRes_state("未投递");
+            resumeService.updateReadstate(resume);
+            return selectrecruit(session);
+        }else {
+            return null;
         }
     }
 }

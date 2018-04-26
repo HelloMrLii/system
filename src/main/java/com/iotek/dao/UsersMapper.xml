@@ -3,9 +3,9 @@
 <mapper namespace="com.iotek.dao.UsersMapper">
 
     <insert id="addUser" parameterType="Users">
-        INSERT INTO USERS(U_ID,U_NAME,U_PASS,U_STATE) VALUES (USERS_SEQ.nextval,#{U_NAME},#{U_PASS},#{U_STATE})
+        INSERT INTO USERS(U_ID,U_NAME,U_PASS,U_STATE) VALUES (USERS_SEQ.nextval,#{u_name},#{u_pass},#{u_state})
     </insert>
     <select id="selectUSers" resultType="Users">
-        SELECT * FROM USERS WHERE U_NAME=#{U_NAME} and U_PASS=#{U_PASS}
+        SELECT * FROM USERS WHERE U_NAME=#{u_name} and U_PASS=#{u_pass}
     </select>
 </mapper>

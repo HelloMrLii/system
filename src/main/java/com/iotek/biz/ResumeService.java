@@ -1,5 +1,6 @@
 package com.iotek.biz;
 
+import com.iotek.model.Recruit;
 import com.iotek.model.Resume;
 
 import java.util.List;
@@ -14,5 +15,7 @@ public interface ResumeService {
     boolean updateState(Resume resume);
     Resume selectTitle(Resume resume);
     Resume selectID(Resume resume);
+    boolean updateReadstate(Resume resume);
+
 
 }
