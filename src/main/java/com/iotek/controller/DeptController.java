@@ -31,7 +31,7 @@ public class DeptController {
     @RequestMapping("/adddept")
     public String adddept(Model model)throws Exception{
         List<Dept> depts=deptService.selectAll();
-        model.addAttribute("dept");
+        model.addAttribute("dept",depts);
         return "adddept";
     }
 

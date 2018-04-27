@@ -8,4 +8,7 @@
     <select id="selectUSers" resultType="Users">
         SELECT * FROM USERS WHERE U_NAME=#{u_name} and U_PASS=#{u_pass}
     </select>
+    <select id="selectID" resultType="com.iotek.model.Users">
+        SELECT * FROM USERS WHERE U_ID=#{u_id}
+    </select>
 </mapper>

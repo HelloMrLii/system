@@ -4,6 +4,9 @@
     <insert id="addRecruit" parameterType="Recruit">
         INSERT INTO RECRUIT(RE_ID,RES_ID,RE_JOB,RE_STATE,U_NAME) VALUES (RECRUIT_SEQ.nextval,#{res_id},#{re_job},#{re_state},#{u_name})
     </insert>
+    <update id="updateRestate" parameterType="Recruit">
+        UPDATE RECRUIT SET RE_STATE=#{re_state} where RES_ID=#{res_id}
+    </update>
     <delete id="delectRecruit" parameterType="Recruit">
         DELETE FROM RECRUIT WHERE RE_ID=#{re_id}
     </delete>

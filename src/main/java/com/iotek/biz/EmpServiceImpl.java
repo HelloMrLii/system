@@ -16,4 +16,8 @@ public class EmpServiceImpl implements EmpService {
     public boolean addEmp(Emp emp) {
         return empMapper.addEmp(emp);
     }
+
+    public Emp selectUid(Emp emp) {
+        return empMapper.selectUid(emp);
+    }
 }

@@ -31,4 +31,8 @@ public class UserServiceImpl implements UserService {
     public Users selectUSers(Users users) {
         return usersMapper.selectUSers(users);
     }
+
+    public Users selectID(Users users) {
+        return usersMapper.selectID(users);
+    }
 }

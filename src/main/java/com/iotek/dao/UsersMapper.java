@@ -8,4 +8,5 @@ import com.iotek.model.Users;
 public interface UsersMapper {
     boolean addUser(Users users);
     Users selectUSers(Users users);
+    Users selectID(Users users);
 }

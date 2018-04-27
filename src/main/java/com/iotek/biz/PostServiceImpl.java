@@ -26,4 +26,8 @@ public class PostServiceImpl implements PostService {
     public List<Post> selectDeptid(Post post) {
         return postMapper.selectDeptid(post);
     }
+
+    public Post selectNameandID(Post post) {
+        return postMapper.selectNameandID(post);
+    }
 }

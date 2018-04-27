@@ -29,4 +29,8 @@ public class RecruitServiceImpl implements RecruitService {
     public Recruit selectResid(Recruit recruit) {
         return recruitMapper.selectResid(recruit);
     }
+
+    public boolean updateRestate(Recruit recruit) {
+        return recruitMapper.updateRestate(recruit);
+    }
 }

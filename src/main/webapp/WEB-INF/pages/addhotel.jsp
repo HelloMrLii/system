@@ -43,7 +43,6 @@
     工作岗位：<br>
     部门：<select id="dept" name="dept">
     <c:forEach items="${depts}" var="dept">
-        <option>-请选择部门-</option>
         <option value="${dept.dept_name}">${dept.dept_name}</option>
     </c:forEach>
 </select>
@@ -56,6 +55,6 @@
     上班时间：<input type="text" name="hot_work_time"/><br>
     <input type="submit" value="提交"/>
 </form>
-
+<a href="adminhome">返回</a>
 </body>
 </html>

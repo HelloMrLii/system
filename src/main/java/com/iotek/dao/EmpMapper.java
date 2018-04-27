@@ -7,4 +7,5 @@ import com.iotek.model.Emp;
  */
 public interface EmpMapper {
     boolean addEmp(Emp emp);
+    Emp selectUid(Emp emp);
 }

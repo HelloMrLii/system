@@ -35,13 +35,14 @@
                     <div style="float: left;width: 50%">
                         <form action="addemp" method="post">
                             <input type="hidden" value="${invited.u_id}" name="u_id"/>
+                            <input type="hidden" value="${invited.res_id}" name="res_id"/>
+                            <input type="hidden" value="${invited.inv_id}" name="inv_id"/>
                             <input type="submit" value="是"/>
                         </form>
                     </div>
                     <div style="float: right;width: 50%">
                         <form action="updateinviteda" method="post">
                             <input type="hidden" value="${invited.inv_id}" name="inv_id"/>
-                            <input type="hidden" name="res" value="否"/>
                             <input type="submit" value="否"/>
                         </form>
                     </div>
@@ -49,5 +50,6 @@
             </tr>
         </c:forEach>
     </table>
+<a href="adminhome">返回</a>
 </body>
 </html>

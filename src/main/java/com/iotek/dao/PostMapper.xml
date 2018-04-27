@@ -10,4 +10,7 @@
     <select id="selectDeptid" resultType="com.iotek.model.Post">
         SELECT * FROM POST WHERE DEPT_ID=#{dept_id}
     </select>
+    <select id="selectNameandID" resultType="com.iotek.model.Post">
+        SELECT * FROM POST WHERE DEPT_ID=#{dept_id} and post_name=#{post_name}
+    </select>
 </mapper>

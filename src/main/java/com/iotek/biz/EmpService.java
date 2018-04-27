@@ -7,4 +7,6 @@ import com.iotek.model.Emp;
  */
 public interface EmpService {
     boolean addEmp(Emp emp);
+    Emp selectUid(Emp emp);
+
 }

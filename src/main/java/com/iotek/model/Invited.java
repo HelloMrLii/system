@@ -13,6 +13,7 @@ public class Invited implements Serializable {
     private int u_id;
     private String inv_state;
     private String inv_pass;
+    private int res_id;
 
     public int getInv_id() {
         return inv_id;
@@ -60,6 +61,14 @@ public class Invited implements Serializable {
 
     public void setInv_pass(String inv_pass) {
         this.inv_pass = inv_pass;
+    }
+
+    public int getRes_id() {
+        return res_id;
+    }
+
+    public void setRes_id(int res_id) {
+        this.res_id = res_id;
     }
 
     @Override

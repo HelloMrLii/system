@@ -73,18 +73,27 @@ private PostService postService;
     @RequestMapping("/addhotel")
     public String addhotel(Model model)throws Exception{
         List<Dept> depts=deptService.selectAll();
+        for (Dept d:depts){
+            System.out.println(d);
+        }
         model.addAttribute("depts",depts);
         return "addhotel";
     }
-
+//添加招聘信息
     @RequestMapping("/inserthotel")
     public String inserthotel(Hotel hotel,HttpServletRequest request,Model model)throws Exception{
-        Date date=new Date();
-        java.sql.Date date1=new java.sql.Date(date.getTime());
-        hotel.setHot_rel_time(date1);
         String dept=request.getParameter("dept");
         String post=request.getParameter("post");
         String hot_post=dept+post;
+        Hotel hotel2=new Hotel();
+        hotel2.setHot_post(hot_post);
+        Hotel hotel1=hotelService.selectHotpost(hotel2);
+        if (hotel1!=null){
+            return "adminhome";
+        }
+        Date date=new Date();
+        java.sql.Date date1=new java.sql.Date(date.getTime());
+        hotel.setHot_rel_time(date1);
         System.out.println(hot_post);
         hotel.setHot_post(hot_post);
         if (hotelService.addHotel(hotel)){

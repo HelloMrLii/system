@@ -46,9 +46,8 @@ public class InvitedController {
         invited.setInv_time(date);//面试时间
         invited.setInv_pass("未面试");
         invited.setInv_state("未阅读");
-        int resid= Integer.parseInt(request.getParameter("resid"));
         Recruit recruit=new Recruit();
-        recruit.setRes_id(resid);
+        recruit.setRes_id(invited.getRes_id());
         Recruit recruit1=recruitService.selectResid(recruit);//通过简历的ID在求职表中找到想对应的职位
         Hotel hotel=new Hotel();
         hotel.setHot_post(recruit1.getRe_job());
@@ -106,7 +105,7 @@ public class InvitedController {
         List<Invited> inviteds=invitedService.selectInviteda();
         List<Invited> inviteds1=new ArrayList<Invited>();
         for (Invited i:inviteds){
-            if (!i.getInv_pass().equals("已录用")||!i.getInv_pass().equals("已淘汰")){
+            if (!i.getInv_pass().equals("已录用")&&!i.getInv_pass().equals("已淘汰")){
                 inviteds1.add(i);
             }
         }
@@ -119,9 +118,15 @@ public class InvitedController {
     @RequestMapping("/updateinviteda")
     public String updateinviteda(Invited invited,HttpSession session)throws Exception{
         invited.setInv_pass("已淘汰");
+        invited.setInv_state("已阅读");
+        System.out.println("********************"+invited.getInv_id());
         if (invitedService.updateState(invited)){
             return selectinviteda(session);
         }
+        return "adminhome";
+    }
+    @RequestMapping("/adminhome")
+    public String adminhome()throws Exception{
         return "adminhome";
     }
 }

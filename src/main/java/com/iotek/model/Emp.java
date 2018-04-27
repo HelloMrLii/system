@@ -12,6 +12,15 @@ public class Emp implements Serializable {
     private String emp_pass;
     private int dept_id;
     private int post_id;
+    private int u_id;
+
+    public int getU_id() {
+        return u_id;
+    }
+
+    public void setU_id(int u_id) {
+        this.u_id = u_id;
+    }
 
     public int getEmp_id() {
         return emp_id;

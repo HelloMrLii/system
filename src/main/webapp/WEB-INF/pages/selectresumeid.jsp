@@ -54,7 +54,7 @@
             </td>
         <td>
                <input type="hidden" name="u_id" value="<%=resume.getU_id()%>"/>
-                <input type="hidden" name="resid" value="<%=resume.getRes_id()%>"/>
+                <input type="hidden" name="res_id" value="<%=resume.getRes_id()%>"/>
             <input value="发送邀请" type="submit"/>
         </td>
         </form>

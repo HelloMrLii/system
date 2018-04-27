@@ -1,6 +1,8 @@
 package com.iotek.controller;
 
+import com.iotek.biz.RecruitService;
 import com.iotek.biz.ResumeService;
+import com.iotek.model.Recruit;
 import com.iotek.model.Resume;
 import com.iotek.model.Users;
 import org.springframework.stereotype.Controller;
@@ -18,7 +20,8 @@ import java.util.List;
 public class ResumeController {
     @Resource
     private ResumeService resumeService;
-
+    @Resource
+    private RecruitService recruitService;
     /**
      * 创建简历
      * @param resume
@@ -103,6 +106,10 @@ public class ResumeController {
         Resume resume1=resumeService.selectID(resume);
         resume.setRes_read_state("已阅读");
         resume.setRes_state("已投递");
+        Recruit recruit=new Recruit();
+        recruit.setRe_state("已阅读");
+        recruit.setRes_id(resume.getRes_id());
+        recruitService.updateRestate(recruit);
         resumeService.updateReadstate(resume);
         if (resume1!=null){
             session.setAttribute("resumes",resume1);

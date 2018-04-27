@@ -20,5 +20,6 @@
     <a href="selectinviteda">宣布面试结果</a>
     <a href="adddept">添加部门和职位</a>
     <a href="addhotel">添加招聘信息</a>
+    <a href="returnlogin">返回登录界面</a>
 </body>
 </html>

@@ -53,5 +53,6 @@
             </tr>
         </c:forEach>
     </table>
+<a href="adminhome">返回</a>
 </body>
 </html>

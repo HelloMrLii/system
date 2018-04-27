@@ -15,33 +15,28 @@
 <head>
     <base href="<%=basePath%>"/>
     <title></title>
-    <script type="text/javascript" src="pages/jquery-3.1.0.js"></script>
+    <script type="text/javascript" src="js/jquery-3.1.0.js"></script>
     <script>
         function a() {
-            $("#_input").val($("#select option:selected").text());
+            console.log($('#select').val());
+            $('#dept_name').val($('#select').val());
         }
     </script>
-    <style>
-        *{
-            margin: 0px auto;
-            padding: 0px auto;
-        }
-    </style>
 </head>
 <body>
+    <form action="insertdept" method="post" name="forml">
 
-    <div style="text-align: center;margin-top: 10px">
-        <select id="select" onchange="a()">
+        部门： <input type="text" id="dept_name" name="dept_name"/>
+
+        <select name="select" onchange="a()" id="select">
             <c:forEach items="${dept}" var="dept">
-                <option>${dept.dept_name}</option>
+                <option value="${dept.dept_name}">${dept.dept_name}</option>
             </c:forEach>
         </select>
-    </div>
-    <form action="insertdept" method="post">
-        部门： <input type="text" id="_input" name="dept_name"/>
+
         职位:<input type="text" name="post_name"/>
         <input type="submit" value="添加">
 </form>
-
+<a href="adminhome">返回</a>
 </body>
 </html>

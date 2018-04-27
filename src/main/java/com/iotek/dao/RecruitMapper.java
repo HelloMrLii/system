@@ -12,4 +12,5 @@ public interface RecruitMapper {
     List<Recruit> selectRecruit();
     boolean delectRecruit(Recruit recruit);
     Recruit selectResid(Recruit recruit);
+    boolean updateRestate(Recruit recruit);
 }

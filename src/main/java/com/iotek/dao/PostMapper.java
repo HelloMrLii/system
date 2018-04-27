@@ -11,4 +11,5 @@ public interface PostMapper {
     boolean insertPost(Post post);
     Post selectName(Post post);
     List<Post> selectDeptid(Post post);
+    Post selectNameandID(Post post);
 }

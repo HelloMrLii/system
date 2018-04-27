@@ -1,8 +1,10 @@
 package com.iotek.controller;
 
 import com.iotek.biz.AdminService;
+import com.iotek.biz.EmpService;
 import com.iotek.biz.UserService;
 import com.iotek.model.Admin;
+import com.iotek.model.Emp;
 import com.iotek.model.Users;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -21,6 +23,8 @@ public class UserController {
     private UserService userService;
     @Resource
     private AdminService adminService;
+    @Resource
+    private EmpService empService;
     /**
      * 登录
      * @param session
@@ -49,8 +53,12 @@ public class UserController {
             users.setU_name(name);
             users.setU_pass(name);
             Users users1=userService.selectUSers(users);
+            Emp emp=new Emp();
+            emp.setU_id(users1.getU_id());
+            Emp emp1=empService.selectUid(emp);
             if (users1!=null){
                 session.setAttribute("user",users1);
+                session.setAttribute("emp",emp1);
                 return "userhome";
             }else {
                 return "../../index";
@@ -95,5 +103,9 @@ public class UserController {
             }
         }
         return "register";
+    }
+    @RequestMapping("/returnlogin")
+    public String returnlogin(){
+        return "../../index";
     }
 }
