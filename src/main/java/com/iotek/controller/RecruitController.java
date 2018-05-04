@@ -77,6 +77,7 @@ public class RecruitController {
      */
     @RequestMapping("/delectrecruit")
     public String delectrecruit(Recruit recruit,HttpSession session)throws Exception{
+
         if (recruitService.delectRecruit(recruit)){
             Resume resume=new Resume();
             resume.setRes_id(recruit.getRes_id());

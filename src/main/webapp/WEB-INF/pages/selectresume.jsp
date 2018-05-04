@@ -15,23 +15,14 @@
 <head>
     <base href="<%=basePath%>"/>
     <title></title>
-    <script>
-        function doValidate() {
-            var state="未阅读";
-            if (!state.test(document.forma.res_read_state.value)){
-                alert('此简历尚未批阅，无法删除');
-                document.forma.res_read_state.focus();
-                return false;
-            }
-            return true;
-        }
-    </script>
+
 </head>
 <body>
 <table border="1" cellspacing="0">
     <tr>
         <td>标题</td>
         <td>姓名</td>
+        <td>性别</td>
         <td>年龄</td>
         <td>学历</td>
         <td>工作经验</td>
@@ -52,9 +43,10 @@
             <td>${resume.res_idnumber}</td>
             <td>${resume.res_state}</td>
             <td>
-                <form method="post" action="delectresume" name="forma" onsubmit="return doValidate()">
+                <form method="post" action="delectresume" >
                     <input value="${resume.res_id}" type="hidden" name="res_id"/>
                     <input name="res_read_state" value="${resume.res_read_state}" type="hidden"/>
+                    <input name="res_state" value="${resume.res_state}" type="hidden"/>
                     <input type="submit" value="删除">
                 </form>
             </td>

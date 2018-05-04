@@ -30,4 +30,8 @@ public class PostServiceImpl implements PostService {
     public Post selectNameandID(Post post) {
         return postMapper.selectNameandID(post);
     }
+
+    public Post selectpostid(Post post) {
+        return postMapper.selectpostid(post);
+    }
 }

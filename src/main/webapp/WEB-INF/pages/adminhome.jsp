@@ -18,8 +18,14 @@
 <body>
     <a href="selectrecruit">查看邮箱</a>
     <a href="selectinviteda">宣布面试结果</a>
-    <a href="adddept">添加部门和职位</a>
+    <a href="adddept">添加部门</a>
     <a href="addhotel">添加招聘信息</a>
+    <a href="selecthotela">查看招聘信息</a>
+    <a href="addtrain">添加培训</a>
+    <a href="selecttrain">查看培训信息</a>
+    <a href="updatedept">岗位调动</a>
+    <a href="selectrewpun">查看奖惩</a>
+    <a href="addrewpunadmin">添加奖惩</a>
     <a href="returnlogin">返回登录界面</a>
 </body>
 </html>

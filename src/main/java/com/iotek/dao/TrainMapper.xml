@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.iotek.dao.TrainMapper">
+    <insert id="addTrain" parameterType="Train">
+        INSERT INTO TRAIN(T_ID, T_START_TIME, T_OVER_TIME, T_SITE, T_DEPT, T_CONTENT, T_PS) VALUES
+        (TRAIN_SEQ.nextval,#{t_start_time},#{t_over_time},#{t_site},#{t_dept},#{t_content},#{t_ps})
+    </insert>
+    <update id="updatetrain" parameterType="Train">
+        UPDATE TRAIN SET T_START_TIME=#{t_start_time},T_OVER_TIME=#{t_over_time},T_SITE=#{t_site},
+        T_DEPT=#{t_dept},T_CONTENT=#{t_content},T_PS=#{t_ps} where T_ID=#{t_id}
+    </update>
+    <delete id="delecttrain" parameterType="Train">
+        DELETE FROM TRAIN WHERE T_ID=#{t_id}
+    </delete>
+    <select id="selectAll" resultType="com.iotek.model.Train">
+        SELECT * FROM TRAIN
+    </select>
+</mapper>

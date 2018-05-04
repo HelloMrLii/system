@@ -11,4 +11,5 @@ public interface DeptService {
     boolean insertDept(Dept dept);
     Dept selectDept(Dept dept);
     List<Dept> selectAll();
+    Dept selectID(Dept dept);
 }

@@ -1,10 +1,13 @@
 package com.iotek.controller;
 
 import com.iotek.biz.DeptService;
+import com.iotek.biz.EmpService;
 import com.iotek.biz.PostService;
 import com.iotek.model.Dept;
+import com.iotek.model.Emp;
 import com.iotek.model.Post;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -22,6 +25,8 @@ public class PostController {
     private PostService postService;
     @Resource
     private DeptService deptService;
+    @Resource
+    private EmpService empService;
     @RequestMapping("/selectpost")
     @ResponseBody
     public List<Post> selectpost(Dept dept)throws Exception{
@@ -32,4 +37,14 @@ public class PostController {
         List<Post> posts=postService.selectDeptid(post);
         return posts;
     }
+    @RequestMapping("/selectpostid")
+    @ResponseBody
+    public List<Post> selectpostid(Dept dept)throws Exception{
+       Dept dept1=deptService.selectID(dept);
+       Post post=new Post();
+       post.setDept_id(dept1.getDept_id());
+        List<Post> posts=postService.selectDeptid(post);
+        return posts;
+    }
+
 }

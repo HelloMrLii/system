@@ -26,4 +26,12 @@ public class HotelServiceImpl implements HotelService {
     public boolean addHotel(Hotel hotel) {
         return hotelMapper.addHotel(hotel);
     }
+
+    public boolean delecthotel(Hotel hotel) {
+        return hotelMapper.delecthotel(hotel);
+    }
+
+    public boolean updatehotel(Hotel hotel) {
+        return hotelMapper.updatehotel(hotel);
+    }
 }

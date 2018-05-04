@@ -1,11 +1,48 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.iotek.dao.EmpMapper">
+    <!--<resultMap id="emp" type="Emp">
+        <id column="EMP_ID" property="emp_id"/>
+        <result column="EMP_NAME" property="emp_name"/>
+        <result column="EMP_SEX" property="emp_sex"/>
+        <result column="EMP_PASS" property="emp_pass"/>
+        <result column="DEPT_ID" property="dept_id"/>
+        <result column="POST_ID" property="post_id"/>
+        <result column="U_ID" property="u_id"/>
+        <result column="EMP_TIME" property="emp_time"/>
+        <result column="EMP_STATE" property="emp_state"/>
+        <result column="EMP_REAL_NAME" property="emp_real_name"/>
+        <collection property="rewpuns" ofType="Rewpun">
+            <id column="REW_PUN_ID" property="rewpun_id"/>
+            <result column="REW_PUN_TIME" property="rewpun_time"/>
+            <result column="REW_PUN_REASON" property="rewpun_reason"/>
+            <result column="REW_PUN_MONEY" property="rewpun_money"/>
+        </collection>
+    </resultMap>-->
+
     <insert id="addEmp" parameterType="Emp">
-        INSERT INTO EMP(EMP_ID, EMP_NAME, EMP_SEX, EMP_PASS, DEPT_ID, POST_ID,U_ID) VALUES
-        (EMP_SEQ.nextval,#{emp_name},#{emp_sex},#{emp_pass},#{dept_id},#{post_id},#{u_id})
+        INSERT INTO EMP(EMP_ID, EMP_NAME, EMP_SEX, EMP_PASS, DEPT_ID, POST_ID,U_ID,EMP_TIME,EMP_STATE,EMP_REAL_NAME) VALUES
+        (EMP_SEQ.nextval,#{emp_name},#{emp_sex},#{emp_pass},#{dept_id},#{post_id},#{u_id},#{emp_time},#{emp_state},#{emp_real_name})
     </insert>
+    <update id="updatedept" parameterType="Emp">
+        UPDATE EMP SET DEPT_ID=#{dept_id} ,POST_ID=#{post_id} where emp_real_name=#{emp_real_name}
+    </update>
+
     <select id="selectUid" resultType="com.iotek.model.Emp">
         SELECT * FROM EMP WHERE U_ID=#{u_id}
     </select>
+
+    <select id="selectAll" resultType="com.iotek.model.Emp">
+        SELECT * FROM EMP
+    </select>
+    <select id="selectdeptid" resultType="com.iotek.model.Emp">
+        SELECT * FROM EMP WHERE DEPT_ID=#{dept_id}
+    </select>
+    <select id="login" resultType="com.iotek.model.Emp">
+        SELECT * FROM EMP WHERE EMP_NAME=#{emp_name}and emp_pass=#{emp_pass}
+    </select>
+    <select id="selectid" resultType="com.iotek.model.Emp">
+        SELECT * FROM EMP WHERE EMP_ID=#{emp_id}
+    </select>
+
 </mapper>

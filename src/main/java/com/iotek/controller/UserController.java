@@ -1,11 +1,7 @@
 package com.iotek.controller;
 
-import com.iotek.biz.AdminService;
-import com.iotek.biz.EmpService;
-import com.iotek.biz.UserService;
-import com.iotek.model.Admin;
-import com.iotek.model.Emp;
-import com.iotek.model.Users;
+import com.iotek.biz.*;
+import com.iotek.model.*;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,6 +9,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Administrator on 2018/4/23.
@@ -25,6 +23,11 @@ public class UserController {
     private AdminService adminService;
     @Resource
     private EmpService empService;
+    @Resource
+    private DeptService deptService;
+    @Resource
+    private TrainService trainService;
+
     /**
      * 登录
      * @param session
@@ -51,19 +54,38 @@ public class UserController {
         }else {
             Users users=new Users();
             users.setU_name(name);
-            users.setU_pass(name);
+            users.setU_pass(pass);
             Users users1=userService.selectUSers(users);
-            Emp emp=new Emp();
-            emp.setU_id(users1.getU_id());
-            Emp emp1=empService.selectUid(emp);
             if (users1!=null){
+                Emp emp=new Emp();
+                emp.setU_id(users1.getU_id());
+                Emp emp1=empService.selectUid(emp);
                 session.setAttribute("user",users1);
                 session.setAttribute("emp",emp1);
                 return "userhome";
             }else {
-                return "../../index";
+               Emp emp2=new Emp();
+               emp2.setEmp_name(name);
+               emp2.setEmp_pass(pass);
+               Emp emp3=empService.login(emp2);
+               if (emp3!=null){
+                   Dept dept=new Dept();
+                   dept.setDept_id(emp3.getDept_id());
+                   Dept dept1=deptService.selectID(dept);
+                   List<Train> train=trainService.selectAll();
+                   List<Train> trains=new ArrayList<Train>();
+                   for (Train t:train){
+                       if (dept1.getDept_name().equals(t.getT_dept())&&!t.getT_ps().equals("已结束")){
+                           trains.add(t);
+                       }
+                   }
+                   model.addAttribute("train",trains);
+                   model.addAttribute("emp",emp3);
+                   return "emphome";
+               }
             }
         }
+        return null;
     }
 
     /**
@@ -96,7 +118,7 @@ public class UserController {
             }
         }else {
             users.setU_name(name);
-            users.setU_pass(name);
+            users.setU_pass(pass);
             users.setU_state(1);
             if (userService.addUser(users)){
                 return "../../index";

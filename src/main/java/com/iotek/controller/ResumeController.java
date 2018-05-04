@@ -84,14 +84,17 @@ public class ResumeController {
      */
     @RequestMapping("/delectresume")
     public String delectresume(Resume resume,HttpSession session)throws Exception{
-        if (resume.getRes_read_state().equals("未阅读")){
-            return select(session);
-        }
-        if (resumeService.delectResume(resume)){
-            return select(session);
+        if (resume.getRes_state().equals("已投递")){
+            if (resume.getRes_read_state().equals("未阅读")){
+                return select(session);
+            }
         }else {
-            return "selectresume";
+            if (resumeService.delectResume(resume)){
+                return select(session);
+            }
+
         }
+        return "selectresume";
     }
 
     /**

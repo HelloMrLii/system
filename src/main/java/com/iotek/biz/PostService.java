@@ -12,4 +12,5 @@ public interface PostService {
     Post selectName(Post post);
     List<Post> selectDeptid(Post post);
     Post selectNameandID(Post post);
+    Post selectpostid(Post post);
 }

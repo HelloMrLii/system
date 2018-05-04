@@ -1,6 +1,7 @@
 package com.iotek.model;
 
 import java.io.Serializable;
+import java.util.Date;
 import java.util.Set;
 
 /**
@@ -10,6 +11,7 @@ public class Dept implements Serializable{
     private int dept_id;
     private String dept_name;
     private int post_id;
+    private Date dept_time;
 
     public int getDept_id() {
         return dept_id;
@@ -33,6 +35,14 @@ public class Dept implements Serializable{
 
     public void setPost_id(int post_id) {
         this.post_id = post_id;
+    }
+
+    public Date getDept_time() {
+        return dept_time;
+    }
+
+    public void setDept_time(Date dept_time) {
+        this.dept_time = dept_time;
     }
 
     @Override

@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.iotek.dao.PostMapper">
     <insert id="insertPost" parameterType="Post">
-        INSERT INTO POST(POST_ID, DEPT_ID, POST_NAME, EMP_ID) VALUES (POST_SEQ.nextval,#{dept_id},#{post_name},#{emp_id})
+        INSERT INTO POST(POST_ID, DEPT_ID, POST_NAME, EMP_ID,POST_CLASS,POST_MONEY) VALUES (POST_SEQ.nextval,#{dept_id},#{post_name},#{emp_id},#{post_class},#{post_money})
     </insert>
     <select id="selectName" resultType="com.iotek.model.Post">
         SELECT * FROM POST WHERE POST_NAME=#{post_name}
@@ -12,5 +12,8 @@
     </select>
     <select id="selectNameandID" resultType="com.iotek.model.Post">
         SELECT * FROM POST WHERE DEPT_ID=#{dept_id} and post_name=#{post_name}
+    </select>
+    <select id="selectpostid" resultType="com.iotek.model.Post">
+        SELECT * FROM POST WHERE POST_ID=#{post_id}
     </select>
 </mapper>

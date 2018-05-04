@@ -71,9 +71,11 @@ public class InvitedController {
         Users users= (Users) session.getAttribute("user");
         invited.setU_id(users.getU_id());
         List<Invited> inviteds=invitedService.selectInvited(invited);
-        if (inviteds.size()!=0){
-            session.setAttribute("invited",inviteds);
-            return "selectinvited";
+        for (Invited i:inviteds){
+            if (i.getInv_pass().equals("未面试")&&inviteds.size()!=0){
+                session.setAttribute("invited",inviteds);
+                return "selectinvited";
+            }
         }
         return "userhome";
     }
@@ -100,6 +102,7 @@ public class InvitedController {
             return selectinvited(session);
         }
     }
+
     @RequestMapping("/selectinviteda")
     public String selectinviteda(HttpSession session){
         List<Invited> inviteds=invitedService.selectInviteda();
@@ -115,6 +118,7 @@ public class InvitedController {
         }
         return "adminhome";
     }
+    //不被录用的处理
     @RequestMapping("/updateinviteda")
     public String updateinviteda(Invited invited,HttpSession session)throws Exception{
         invited.setInv_pass("已淘汰");

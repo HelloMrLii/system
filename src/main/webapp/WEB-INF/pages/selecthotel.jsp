@@ -18,29 +18,29 @@
 </head>
 <body>
     <table border="1" cellspacing="0">
-        <tr>
-            <td>公司</td>
-            <td>月薪</td>
-            <td>发布时间</td>
-            <td>职位</td>
-            <td>要求</td>
-            <td>公司地址</td>
-            <td>福利</td>
-            <td>公司简介</td>
-            <td>上班时间</td>
-            <td>投递简历</td>
-        </tr>
-        <c:forEach items="${sessionScope.hotel}" var="hotel">
-            <tr>
-                <td>${hotel.hot_title}</td>
-                <td>${hotel.hot_money}</td>
-                <td>${hotel.hot_rel_time}</td>
-                <td>${hotel.hot_post}</td>
-                <td>${hotel.hot_require}</td>
-                <td>${hotel.hot_site}</td>
-                <td>${hotel.hot_welfare}</td>
-                <td>${hotel.hot_intro}</td>
-                <td>${hotel.hot_work_time}</td>
+                <tr>
+                    <td>公司</td>
+                    <td>月薪</td>
+                    <td>发布时间</td>
+                    <td>职位</td>
+                    <td>要求</td>
+                    <td>公司地址</td>
+                    <td>福利</td>
+                    <td>公司简介</td>
+                    <td>上班时间</td>
+                    <td>投递简历</td>
+                </tr>
+                <c:forEach items="${sessionScope.hotel}" var="hotel">
+                    <tr>
+                        <td>${hotel.hot_title}</td>
+                        <td>${hotel.hot_money}</td>
+                        <td>${hotel.hot_rel_time}</td>
+                        <td>${hotel.hot_post}</td>
+                        <td>${hotel.hot_require}</td>
+                        <td>${hotel.hot_site}</td>
+                        <td>${hotel.hot_welfare}</td>
+                        <td>${hotel.hot_intro}</td>
+                        <td>${hotel.hot_work_time}</td>
                 <td>
                     <form method="post" action="addrecruit">
                             <select name="res_title">

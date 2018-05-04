@@ -25,4 +25,8 @@ public class DeptServiceImpl implements DeptService {
     public List<Dept> selectAll() {
         return deptMapper.selectAll();
     }
+
+    public Dept selectID(Dept dept) {
+        return deptMapper.selectID(dept);
+    }
 }

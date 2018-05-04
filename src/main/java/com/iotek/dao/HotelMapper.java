@@ -11,4 +11,6 @@ public interface HotelMapper {
     List<Hotel> selectHotel();
     Hotel selectHotpost(Hotel hotel);
     boolean addHotel(Hotel hotel);
+    boolean delecthotel(Hotel hotel);
+    boolean updatehotel(Hotel hotel);
 }

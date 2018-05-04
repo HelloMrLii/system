@@ -10,6 +10,24 @@ public class Post implements Serializable {
     private String post_name;
     private int emp_id;
     private int dept_id;
+    private int post_class;
+    private int post_money;
+
+    public int getPost_money() {
+        return post_money;
+    }
+
+    public void setPost_money(int post_money) {
+        this.post_money = post_money;
+    }
+
+    public int getPost_class() {
+        return post_class;
+    }
+
+    public void setPost_class(int post_class) {
+        this.post_class = post_class;
+    }
 
     public int getPost_id() {
         return post_id;

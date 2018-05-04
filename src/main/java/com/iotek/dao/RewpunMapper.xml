@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.iotek.dao.RewpunMapper">
+   <!-- <resultMap id="rewpun" type="Rewpun">
+        <id column="REW_PUN_ID" property="rewpun_id"/>
+        <result column="REW_PUN_TIME" property="rewpun_time"/>
+        <result column="REW_PUN_REASON" property="rewpun_reason"/>
+        <result column="REW_PUN_MONEY" property="rewpun_money"/>
+        <association property="emps" javaType="Emp">
+            <id column="EMP_ID" property="emp_id"/>
+            <result column="EMP_NAME" property="emp_name"/>
+            <result column="EMP_SEX" property="emp_sex"/>
+            <result column="EMP_PASS" property="emp_pass"/>
+            <result column="DEPT_ID" property="dept_id"/>
+            <result column="POST_ID" property="post_id"/>
+            <result column="U_ID" property="u_id"/>
+            <result column="EMP_TIME" property="emp_time"/>
+            <result column="EMP_STATE" property="emp_state"/>
+            <result column="EMP_REAL_NAME" property="emp_real_name"/>
+        </association>
+    </resultMap>-->
+    
+    <insert id="insertRewpun" parameterType="Rewpun">
+        INSERT INTO REW_PUN(REW_PUN_ID,EMP_ID, REW_PUN_TIME, REW_PUN_REASON, REW_PUN_MONEY) VALUES
+        (REW_PUN_SEQ.nextval,#{emp_id},#{rewpun_time},#{rewpun_reason},#{rewpun_money})
+    </insert>
+</mapper>
